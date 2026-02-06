@@ -10,7 +10,10 @@ def echo_said(duration=4, samplerate=16000):
         print(f"🗣️ You said: {text}")
     else:
         print("❌ Could not transcribe audio.")
-    
+    print("the text is:", text.lower())
 
+    # Check if text is not empty AND contains wake word
+    result = text and text.lower() in WAKE_WORD
+    print(result)
+    return result
     
-    return text.lower() in WAKE_WORD

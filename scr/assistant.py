@@ -4,14 +4,9 @@ from commands import open_cava, open_vscode, open_browser, shutdown
 from config import COMMAND_DURATION
 from test import echo_said  # assuming you still want to use this
 import subprocess
-
+from playsound import play_activation_sound, play_hello, play_vscode_sound
 # ---- Play activation sound ----
-def play_activation_sound():
-    # Non-blocking, simple Linux approach
-    subprocess.run(["aplay", "/home/noro18/Documents/Project/LYRA/pre-recorded audio/on.wav"])  # replace with your file path
 
-def play_hello():
-    subprocess.run(["aplay", "/home/noro18/Documents/Project/LYRA/pre-recorded audio/hello.wav"])
 
 def start(debug=False):
     print("🎧 Lyra is running. Say 'Lyra' to activate.")
@@ -36,7 +31,7 @@ def start(debug=False):
         # --------------------
         audio = record(COMMAND_DURATION)
         command = transcribe(audio)
-
+        print(f"Command: {command}")
         if debug:
             print(f"[DEBUG] Command heard: {command}")
 
@@ -46,9 +41,9 @@ def start(debug=False):
         # --------------------
         # HANDLE COMMANDS
         # --------------------
-        if "vscode" in command:
+        if "vscode" in command or "code" in command or "visual studio" in command:           
             open_vscode()
-
+            play_vscode_sound()
         elif "browser" in command:
             open_browser()
 

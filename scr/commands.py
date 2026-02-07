@@ -19,7 +19,7 @@ def open_vscode():
     subprocess.Popen(["code"])
 
 def open_browser():
-    subprocess.Popen(["firefox"])
+    subprocess.Popen(["chromium-browser"])
 
 def shutdown():
     subprocess.Popen(["shutdown", "now"])

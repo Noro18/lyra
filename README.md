@@ -7,3 +7,7 @@
 3. Basec on what i say it will run a command i want 
 
 
+# Note
+
+1. Agora iha branch feature atu aumetna Voice Activated Detection maibe sdk diak
+2. 

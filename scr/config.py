@@ -4,4 +4,4 @@ SAMPLE_WIDTH = 2  # int16 = 2 bytes
 WAKE_WORD = "lyra"
 
 WAKE_DURATION = 3     # seconds
-COMMAND_DURATION = 5  # seconds
+COMMAND_DURATION = 4  # seconds

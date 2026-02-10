@@ -18,8 +18,11 @@ def open_cava():
 def open_vscode():
     subprocess.Popen(["code"])
 
+def close_vscode():
+    subprocess.Popen(["pkill", "code"])
+
 def open_browser():
-    subprocess.Popen(["chromium-browser"])
+    subprocess.Popen(["chromium"])
 
 def shutdown():
     subprocess.Popen(["shutdown", "now"])

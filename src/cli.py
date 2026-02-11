@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import click
-from assistant import start
-from test import echo_said
+from src.assistant import start
+from src.test import echo_said
 
 @click.command()
 @click.option('--debug', is_flag=True, help="Run Lyra in debug mode")

@@ -1,5 +1,5 @@
-from audio import record, transcribe 
-from config import WAKE_WORD, WAKE_DURATION
+from src.audio import record, transcribe 
+from src.config import WAKE_WORD, WAKE_DURATION
 def echo_said(duration=2.9):
     print(f"🎧 Recording for {duration} seconds...")
     audio = record(duration)

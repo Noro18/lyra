@@ -1,5 +1,5 @@
-from audio import record, transcribe
-from config import WAKE_WORD, WAKE_DURATION
+from src.audio import record, transcribe
+from src.config import WAKE_WORD, WAKE_DURATION
 
 def wait_for_wakeword(debug=False) -> bool:
     audio = record(WAKE_DURATION)

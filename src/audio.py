@@ -1,7 +1,7 @@
 import sounddevice as sd
 import numpy as np
 import speech_recognition as sr
-from config import SAMPLE_RATE, CHANNELS, SAMPLE_WIDTH
+from src.config import SAMPLE_RATE, CHANNELS, SAMPLE_WIDTH
 
 recognizer = sr.Recognizer()
 

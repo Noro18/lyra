@@ -1,11 +1,23 @@
-from wakeword import wait_for_wakeword
-from audio import record, transcribe
-from commands import open_cava, open_vscode, open_browser, shutdown, close_vscode
-from config import COMMAND_DURATION
-from test import echo_said  # assuming you still want to use this
+from src.wakeword import wait_for_wakeword
+from src.audio import record, transcribe
+from src.commands import (
+    open_cava,
+    open_vscode,
+    open_browser,
+    shutdown,
+    close_vscode,
+)
+from src.config import COMMAND_DURATION
+from src.test import echo_said
 import subprocess
-from playsound import play_activation_sound, play_hello, play_prompting_sound, play_vscode_sound, play_shutdown_sound
-# ---- Play activation sound ----
+from src.playsound import (
+    play_activation_sound,
+    play_hello,
+    play_prompting_sound,
+    play_vscode_sound,
+    play_shutdown_sound,
+)
+
 
 
 def start(debug=False):

@@ -1,14 +1,8 @@
-from src.wakeword import wait_for_wakeword
-from src.audio import record, transcribe
-from src.commands import (
-    open_cava,
-    open_vscode,
-    open_browser,
-    shutdown,
-    close_vscode,
-)
-from src.config import COMMAND_DURATION
-from src.test import echo_said
+from wakeword import wait_for_wakeword
+from audio import record, transcribe
+from commands import open_cava, open_vscode, open_browser, shutdown, close_vscode, sleep
+from config import COMMAND_DURATION
+from test import echo_said  # assuming you still want to use this
 import subprocess
 from src.playsound import (
     play_activation_sound,
@@ -21,7 +15,7 @@ from src.playsound import (
 
 
 def start(debug=False):
-    print("🎧 Lyra is running. Say 'Lyra' to activate.")
+    print("🎧 Echo is running. Say 'Lyra' to activate.")
 
     active = False  # state flag
 
@@ -31,8 +25,9 @@ def start(debug=False):
         # --------------------
         if not active:
             if echo_said():  # or use wait_for_wakeword()
+                play_prompting_sound()
                 active = True
-                print("✨ Lyra activated")
+                print("✨ Echo activated")
                 open_cava()
                 play_activation_sound()  # only plays ONCE per activation
                 play_hello()
@@ -66,8 +61,9 @@ def start(debug=False):
             play_shutdown_sound()
             shutdown()
 
-        elif "stop lyra" in command or "lyra stop" in command:
-            print("🛑 Lyra stopped")
+        elif "stop echo" in command or "echo stop" in command:
+            sleep()
+            print("🛑 Echo stopped")
             active = False  # reset state, back to waiting for wake word
 
         else:

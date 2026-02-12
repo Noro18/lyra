@@ -24,5 +24,8 @@ def close_vscode():
 def open_browser():
     subprocess.Popen(["chromium"])
 
+def sleep():
+    subprocess.Popen(["pkill", 'cava'])
+
 def shutdown():
     subprocess.Popen(["shutdown", "now"])
